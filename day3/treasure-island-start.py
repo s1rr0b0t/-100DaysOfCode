@@ -1,3 +1,7 @@
+# 38. Day 3 Project: Treasure Island
+
+
+
 print('''
     *******************************************************************************
             |                   |                  |                     |
@@ -21,9 +25,101 @@ print('''
     *******************************************************************************
 ''')
 print("Welcome to Treasure Island.")
-print("Your mission is to find the treasure.") 
+print("Your mission is to find the treasure.")
 
 #https://www.draw.io/?lightbox=1&highlight=0000ff&edit=_blank&layers=1&nav=1&title=Treasure%20Island%20Conditional.drawio#Uhttps%3A%2F%2Fdrive.google.com%2Fuc%3Fid%3D1oDe4ehjWZipYRsVfeAx2HyB7LCQ8_Fvi%26export%3Ddownload
 
 #Write your code below this line 👇
+
+path = input("Choose your way RIGHT o LEFT: ").upper()
+if path == 'LEFT':
+	action = input("Choose your action SWIM o WAIT: ").upper()
+	if action == 'WAIT':
+		door = input("Which door?  RED, BLUE o YELLOW: ").upper()
+		if door == 'BLUE':
+			print("""
+                  ((((()))
+                  |o\ /o)|
+                  ( (  _')
+                   (._.  /\__
+                  ,\___,/ '  ')
+    '.,_,,       (  .- .   .    )
+     \   \\     ( '        )(    )
+      \   \\    \.  _.__ ____( .  |
+       \  /\\   .(   .'  /\  '.  )
+        \(  \\.-' ( /    \/    \)
+         '  ()) _'.-|/\/\/\/\/\|
+             '\\ .( |\/\/\/\/\/|
+               '((  \    /\    /
+               ((((  '.__\/__.')
+                ((,) /   ((()   )
+                 "..-,  (()("   /
+                  _//.   ((() ."
+          _____ //,/" ___ ((( ', ___
+                           ((  )
+                            / /
+                          _/,/'
+                        /,/,"
+			""")
+			print("Eaten by beasts... GAME OVER!!!")
+		elif door == 'RED':
+			print("""
+			    	      (  .      )
+           )           (              )
+                 .  '   .   '  .  '  .
+        (    , )       (.   )  (   ',    )
+         .' ) ( . )    ,  ( ,     )   ( .
+      ). , ( .   (  ) ( , ')  .' (  ,    )
+     (_,) . ), ) _) _,')  (, ) '. )  ,. (' )
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+			""")
+			print("Burned by fire... GAME OVER!!!")
+		elif door == 'YELLOW':
+			print("""
+			        ____...------------...____
+               _.-"` /o/__ ____ __ __  __ \o\_`"-._
+             .'     / /                    \ \     '.
+             |=====/o/======================\o\=====|
+             |____/_/________..____..________\_\____|
+             /   _/ \_     <_o#\__/#o_>     _/ \_   \
+             \_________\####/_________/
+              |===\!/========================\!/===|
+              |   |=|          .---.         |=|   |
+              |===|o|=========/     \========|o|===|
+              |   | |         \() ()/        | |   |
+              |===|o|======{'-.) A (.-'}=====|o|===|
+              | __/ \__     '-.\uuu/.-'    __/ \__ |
+              |==== .'.'^'.'.====|
+          jgs |  _\o/   __  {.' __  '.} _   _\o/  _|
+              `""""-""""""""""""""""""""""""""-""""`
+			""")
+			print("YOU WIN!!!")
+		else:
+			print("GAME OVER!!!")
+	else:
+		print("""
+		    .'|_.-
+         .'  '  /_
+      .-"    -.   '>
+   .- -. -.    '. /    /|_
+  .-.--.-.       ' >  /  /
+ (o( o( o )       \_."  <
+  '-'-''-'            ) <
+(       _.-'-.   ._\.  _\
+ '----"/--.__.-) _-  \|
+AoS    "V""    "V"
+		""")
+		print("Attacked by trout... GAME OVER!!!")
+else:
+	print("""
+	                           8a .
+                               `.  _
+    ___________  s,    _____     /_/   ____________________a:f____
+               .Jktbc._       _ ./
+              xft#kTJ:   _.  (_)/)  -._
+             cf8#6C. ,  (   ( ,-'      )
+           ` `"P:'.     '-._\_\___.---'
+	""")
+	print("Fall into the hole... GAME OVER!!!")
+
 
