@@ -29,11 +29,11 @@ print("Your mission is to find the treasure.")
 
 #Write your code below this line 👇
 
-path = input("Choose your way RIGHT o LEFT: ").upper()
+path = input("You\'re at crossroad, where do you want to go? Type 'RIGHT' or 'LEFT': ").upper()
 if path == 'LEFT':
-	action = input("Choose your action SWIM o WAIT: ").upper()
+	action = input("You\'ve come to a lake. There is an island in the middle of the lake. Type 'SWIM' to swim across or 'WAIT' to wait for a boat: ").upper()
 	if action == 'WAIT':
-		door = input("Which door?  RED, BLUE o YELLOW: ").upper()
+		door = input("You arrive at the island unharmed. There is a house with 3 doors. One 'RED', one 'BLUE' and one 'YELLOW'. Which colour do you choose? : ").upper()
 		if door == 'BLUE':
 			print("""
                   ((((()))
@@ -81,9 +81,9 @@ if path == 'LEFT':
 | |_| | |  __/ (_| \__ \ |_| | | |  __/
  \__|_|  \___|\__,_|___/\__,_|_|  \___|
 			""")
-			print("YOU WIN!!!")
+			print("You found the treasure! YOU WIN!!!")
 		else:
-			print("GAME OVER!!!")
+			print("You chose a door that doesn\'t exist. GAME OVER!!!")
 	else:
 		print("""
 		    .'|_.-
