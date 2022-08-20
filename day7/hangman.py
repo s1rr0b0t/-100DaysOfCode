@@ -1,8 +1,8 @@
 #Step 1 
-
-from random import random
-from secrets import choice
 import random
+from re import search
+
+
 
 word_list = ["aardvark", "baboon", "camel"]
 
@@ -25,38 +25,17 @@ for x in range(0, len(random_word)):
 
 print(word)
 
-letter_by_user = input("Input a letter: ")
+intentos = 0
+while(intentos < 5):
+    if '_' in word:
+        letter_by_user = input("Input a letter: ")
+        x = 0
+        while( x < len(random_word)):
+            if letter_by_user == random_word[x]:
+                word[x] = letter_by_user
+            x+=1
+        print(f"Try number: {intentos+1} - Word: {word}")
+    else:
+        break
+    intentos += 1
 
-index_list = []
-
-for x in random_word:
-    if letter_by_user == x:
-        index_list.append(tmp_random_word.index(x))
-        tmp_random_word.remove(x)
-
-print(index_list)
-
-
-""" 
-
-tmp_random_word = random_word.copy()
-word = []
-
-for x in range(0, len(random_word)):
-    word.append('_')
-
-letter_by_user = input("Input a letter: ")
-
-index_list = []
-
-for x in random_word:
-    if letter_by_user == x:
-        index_list.append(tmp_random_word.index(x))
-        tmp_random_word.remove(x)
-
-
-
-
-print(random_word)
-print(word)
-print(index_list) """
