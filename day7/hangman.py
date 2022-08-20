@@ -1,7 +1,5 @@
 #Step 1 
 import random
-from re import search
-
 
 
 word_list = ["aardvark", "baboon", "camel"]
@@ -13,8 +11,6 @@ word_list = ["aardvark", "baboon", "camel"]
 #TODO-3 - Check if the letter the user guessed (guess) is one of the letters in the chosen_word.
 
 random_word = list(random.choice(word_list))
-
-tmp_random_word = random_word.copy()
 
 print(random_word)
 
