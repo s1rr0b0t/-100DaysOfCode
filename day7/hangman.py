@@ -1,5 +1,3 @@
-#Step 1 
-from ast import Not
 import random
 
 def drawn_hangman(t):
@@ -77,11 +75,11 @@ for x in range(0, len(random_word)):
 
 print(word)
 
-trys = 1
+try_game = 1
 drawn_hangman(0)
-while(trys <= 7 ):
+while(try_game <= 7 ):
     if '_' in word:
-        if trys == 7:
+        if try_game == 7:
             break
         letter_by_user = input("Input letter: ")
         if letter_by_user in random_word:
@@ -89,9 +87,9 @@ while(trys <= 7 ):
                 add_word(letter_by_user)
                 print(f"Word: {word}")
         else:
-            drawn_hangman(trys)
+            drawn_hangman(try_game)
             print(f"Word: {word}")
-            trys += 1            
+            try_game += 1            
     else:
         print("CONGRATULATIONS - YOU WIN!!!")
         break
