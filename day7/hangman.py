@@ -1,19 +1,75 @@
 #Step 1 
+from ast import Not
 import random
+
+def drawn_hangman(t):
+    HANGMANPICS = ['''
+    +---+
+    |   |
+        |
+        |
+        |
+        |
+    =========''', '''
+    +---+
+    |   |
+    O   |
+        |
+        |
+        |
+    =========''', '''
+    +---+
+    |   |
+    O   |
+    |   |
+        |
+        |
+    =========''', '''
+    +---+
+    |   |
+    O   |
+   /|   |
+        |
+        |
+    =========''', '''
+    +---+
+    |   |
+    O   |
+   /|\  |
+        |
+        |
+    =========''', '''
+    +---+
+    |   |
+    O   |
+   /|\  |
+   /    |
+        |
+    =========''', '''
+    +---+
+    |   |
+    O   |  GAME OVER -  YOU ARE DEAD!!!
+   /|\  |
+   / \  |
+        |
+    =========''']
+    print(HANGMANPICS[t])
+
+
+
+def add_word(letter_by_user):
+    x=0
+    while( x < len(random_word)):
+        if letter_by_user == random_word[x]:
+            word[x] = letter_by_user
+        x+=1
+
+
 
 
 word_list = ["aardvark", "baboon", "camel"]
 
-#TODO-1 - Randomly choose a word from the word_list and assign it to a variable called chosen_word.
-
-#TODO-2 - Ask the user to guess a letter and assign their answer to a variable called guess. Make guess lowercase.
-
-#TODO-3 - Check if the letter the user guessed (guess) is one of the letters in the chosen_word.
-
 random_word = list(random.choice(word_list))
-
-print(random_word)
-
 word = []
 
 for x in range(0, len(random_word)):
@@ -21,17 +77,22 @@ for x in range(0, len(random_word)):
 
 print(word)
 
-intentos = 0
-while(intentos < 5):
+trys = 1
+drawn_hangman(0)
+while(trys <= 7 ):
     if '_' in word:
-        letter_by_user = input("Input a letter: ")
-        x = 0
-        while( x < len(random_word)):
-            if letter_by_user == random_word[x]:
-                word[x] = letter_by_user
-            x+=1
-        print(f"Try number: {intentos+1} - Word: {word}")
+        if trys == 7:
+            break
+        letter_by_user = input("Input letter: ")
+        if letter_by_user in random_word:
+            if letter_by_user not in word:
+                add_word(letter_by_user)
+                print(f"Word: {word}")
+        else:
+            drawn_hangman(trys)
+            print(f"Word: {word}")
+            trys += 1            
     else:
+        print("CONGRATULATIONS - YOU WIN!!!")
         break
-    intentos += 1
 
