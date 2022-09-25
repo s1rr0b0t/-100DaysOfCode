@@ -1,7 +1,5 @@
 
-
-def drawn_hangman(t):
-    HANGMANPICS = ['''
+HANGMANPICS = ['''
     +---+
     |   |
         |
@@ -51,4 +49,4 @@ def drawn_hangman(t):
    / \  |
         |
     =========''']
-    print(HANGMANPICS[t])
+    

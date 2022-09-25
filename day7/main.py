@@ -3,8 +3,6 @@ import hangman_words
 import hangman_art
 
 
-
-
 def add_word(letter_by_user):
     x=0
     while( x < len(random_word)):
@@ -23,7 +21,7 @@ for x in range(0, len(random_word)):
 print(word)
 print(random_word)
 attemp = 1 # this variable start the count numbers of attemps
-hangman_art.drawn_hangman(0) #Drawn hangman, use template 0. represent the beginning game
+print(hangman_art.HANGMANPICS[0]) #Drawn hangman, use template 0. represent the beginning game
 while(attemp <= 7 ):
 # While exit this simbol '_' in word list the game to be continue...
     if '_' in word:
@@ -35,7 +33,7 @@ while(attemp <= 7 ):
                 add_word(letter_by_user)
                 print(f"Word: {word}")
         else:
-            hangman_art.drawn_hangman(attemp)
+            print(hangman_art.HANGMANPICS[attemp])
             print(f"Word: {word}")
             attemp += 1            
     else:
